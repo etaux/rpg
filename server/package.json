@@ -1,0 +1,35 @@
+{
+  "name": "rpg-maker-mv-mmo-server",
+  "version": "0.28.0",
+  "private": true,
+  "description": "Authoritative multiplayer MVP server for RPG Maker MV",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "migrate": "node src/migrate.js",
+    "inspect:mv": "node src/inspect-mv.js",
+    "validate:mv": "node src/validate-mv.js",
+    "validate:combat": "node src/validate-mv-combat.js",
+    "generator:manifest": "node src/generator-manifest.js",
+    "test:trade": "node src/trade-fixtures.js",
+    "test:npc": "node src/npc-event-fixtures.js",
+    "test:auction": "node src/auction-fixtures.js",
+    "test:services": "node src/service-fixtures.js",
+    "test:world-events": "node src/world-event-fixtures.js",
+    "test:quests": "node src/quest-fixtures.js",
+    "test:plugin-events": "node src/mmo-events-plugin-fixtures.js",
+    "test:native-quests": "node src/native-quest-fixtures.js",
+    "check": "node --check src/server.js && node --check src/db.js && node --check src/content.js && node --check src/migrate.js && node --check src/generator-manifest.js && node --check src/mv-database.js && node --check src/mv-events.js && node --check src/mv-combat.js && node --check src/mv-inventory.js && node --check src/mv-mapping.js && node --check src/inspect-mv.js && node --check src/validate-mv-combat.js && node --check src/validate-mv.js && node src/check-plugins.js && npm run test:plugin-events && npm run test:native-quests && npm run test:trade && npm run test:npc && npm run test:auction && npm run test:services && npm run test:world-events && npm run test:quests"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "ws": "^8.18.0"
+  }
+}
